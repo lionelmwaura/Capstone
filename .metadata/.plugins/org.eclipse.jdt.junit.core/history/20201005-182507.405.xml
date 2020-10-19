@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="WebDriverTests" project="ecom" tests="4" started="4" failures="0" errors="0" ignored="3">
+  <testsuite name="com.web.ecom.WebDriverTests" time="11.489" displayname="WebDriverTests" uniqueid="[engine:junit-jupiter]/[class:com.web.ecom.WebDriverTests]">
+    <testcase name="testheader" classname="com.web.ecom.WebDriverTests" time="0.0" ignored="true" displayname="testheader()" uniqueid="[engine:junit-jupiter]/[class:com.web.ecom.WebDriverTests]/[method:testheader()]"/>
+    <testcase name="google" classname="com.web.ecom.WebDriverTests" time="0.0" ignored="true" displayname="Test google search" uniqueid="[engine:junit-jupiter]/[class:com.web.ecom.WebDriverTests]/[method:google()]"/>
+    <testcase name="testEmail" classname="com.web.ecom.WebDriverTests" time="0.0" ignored="true" displayname="testEmail()" uniqueid="[engine:junit-jupiter]/[class:com.web.ecom.WebDriverTests]/[method:testEmail()]"/>
+    <testcase name="login" classname="com.web.ecom.WebDriverTests" time="11.489" displayname="login()" uniqueid="[engine:junit-jupiter]/[class:com.web.ecom.WebDriverTests]/[method:login()]"/>
+  </testsuite>
+</testrun>

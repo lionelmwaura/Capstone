@@ -1,0 +1,5 @@
+package com.web.ecom.service;
+
+public class AccountService {
+
+}

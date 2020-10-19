@@ -1,0 +1,9 @@
+package com.web.tutor.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.web.tutor.applications.Algebra;
+
+public interface MathRepository extends JpaRepository<Algebra, Long>{
+
+}

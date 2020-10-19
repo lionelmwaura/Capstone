@@ -1,0 +1,23 @@
+package com.web.tutor.applications;
+
+import java.util.ArrayList;
+
+public class Algebra {
+
+	private ArrayList<Double> input;
+	private String arithmetic;
+	
+	public ArrayList<Double> getInput() {
+		return input;
+	}
+	public void setInput(ArrayList<Double>input) {
+		this.input = input;
+	}
+	public String getArithmetic() {
+		return arithmetic;
+	}
+	public void setArithmetic(String arithmetic) {
+		this.arithmetic = arithmetic;
+	}
+	
+}

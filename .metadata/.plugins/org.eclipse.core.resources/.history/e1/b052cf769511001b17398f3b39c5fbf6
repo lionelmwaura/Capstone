@@ -1,0 +1,77 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+
+ <header id="header" class="fixed-top">
+    
+       <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.html">KnightOne</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="home">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="shop">Shop</a></li>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="drop-down"><a href="#">Deep Drop Down</a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              
+              <li><a href="contact">Contact</a></li>
+
+            </ul>
+          	</nav><!-- .nav-menu -->
+
+          		<a href="#about" class="get-started-btn scrollto">Get Started</a>
+        		</div>
+      		</div>
+
+    		</div>   
+            
+            
+              <!-- Header Top Links -->
+              <div class="toplinks">
+                <div class="links">
+                
+                  <c:choose>
+            <c:when test="${empty loggedInuser}">
+              <div class="login"><a href="login"><span class="hidden-xs">Log In</span></a></div>
+              <div class="login"><a href="signup"><span class="hidden-xs">Register</span></a></div>
+            </c:when>
+            <c:otherwise>
+            <c:if test="${fn:contains(role, 'ADMIN')}">
+            <%-- <c:if test="${role eq 'ADMIN' || role eq 'DBA'}"> --%>
+              <div class="login"><a href="admin"><span class="hidden-xs">admin</span></a></div>
+            </c:if>
+              <div class="myaccount"><a title="My Account" href="profile"><span class="hidden-xs">My Account</span></a></div>
+              <div class="myaccount"><a title="My Account" href="logout"><span class="hidden-xs">Logout</span></a></div>
+            </c:otherwise>
+            </c:choose>
+                  
+                </div>
+                
+              </div>
+              <!-- End Header Top Links --> 
+              
+            
+  </header>
+  
+  
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.web.ecom.repository;
+
+public interface ImageRepository {
+
+}

@@ -1,0 +1,5 @@
+package com.web.tutor.controller;
+
+public class MathController {
+
+}

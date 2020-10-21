@@ -34,11 +34,6 @@ public class Users {
 
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private List<PaymentMethod> paymentMethod;
-
-	// add one to many mapping for user and their products
-	@OneToMany(mappedBy="users_id", cascade=CascadeType.ALL)
-	private List<Products> products;
-
 	
 	public Long getId() {
 		return id;
@@ -106,13 +101,6 @@ public class Users {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
-	public List<Products> getProducts() {
-		return products;
-	}
-	public void setProducts(List<Products> products) {
-		this.products = products;
-	}
-	
 	
 	@Override
 	public String toString() {

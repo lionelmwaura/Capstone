@@ -19,7 +19,7 @@
 
 <!-- Favicons Icon -->
 
-<title>Shop</title>
+<title>Math</title>
 
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -61,28 +61,13 @@
   <!-- end header --> 
    
   <!-- Main Container -->
-  <div class="col-main col-sm-9 animated" style="visibility: visible;">
-          <div class="my-account">
-            <div class="page-title">
-              <h1>Welcome back ${user_account.fName}  ${msg}<a href="#" data-toggle="modal" data-target="#edits"> <i class="fa fa-pencil"></i></a>
-              <br><span class="text-danger">${error}</span></h1>
-            </div>
-            <div class="product-collateral col-lg-12 col-sm-12 col-xs-12 bounceInUp animated">
-                <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-                  <li class="active"> <a href="#acc_info" data-toggle="tab" aria-expanded="true"> Account Detail </a> </li>
-                  <li class=""> <a href="#acc_update" data-toggle="tab" aria-expanded="false">Update Address</a></li>
-                  <li class=""> <a href="#acc_cards" data-toggle="tab" aria-expanded="false">Cards</a> </li>
-                  <li class=""> <a href="#acc_password" data-toggle="tab" aria-expanded="false">Change Password</a> </li>
-                  <li class=""> <a href="#acc_products" data-toggle="tab" aria-expanded="false">My Products</a> </li>
-                </ul>
-                <div id="productTabContent" class="tab-content">
-                  <div class="tab-pane fade active in" id="acc_info">
-                    <div class="row">
+  <h1>${msg}</h1>
   <!-- Main Container End --> 
   
  <jsp:include page="components/footer.jsp"/>
 </div>  
 <!-- JavaScript --> 
+<script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 <script type="text/javascript" src="static/js/jquery.fancybox.js"></script> 
 <script type="text/javascript" src="static/js/toggle.js"></script>
 <script type="text/javascript" src="static/js/jquery.min.js"></script> 

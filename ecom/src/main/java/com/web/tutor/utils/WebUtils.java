@@ -25,7 +25,6 @@ import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.web.tutor.model.ImageFiles;
-import com.web.tutor.model.Products;
 import com.web.tutor.repository.ImageRepository;
 import com.web.tutor.repository.UserRepository;
 
@@ -166,41 +165,5 @@ public class WebUtils{
 		    String hash = DatatypeConverter.printHexBinary(MessageDigest.getInstance("MD5").digest(filename.getBytes("UTF-8")));
 			return hash;
 	   }
-	   
-	   public void saveImages(Products product) throws NoSuchAlgorithmException, IllegalStateException, IOException {
-			MultipartFile[] files=product.getFile();
-			String realPathtoUploads = request.getSession().getServletContext().getRealPath(UPLOADED_FOLDER);
-			File dir = new File(realPathtoUploads+ File.separator + File.separator + "products"+ File.separator + product.getId());
-			
-			if (!dir.exists())
-			    dir.mkdirs();
-			List<String> fileNames = new ArrayList<String>();
-			if (files!=null &&  files.length > 0) {
-			     for (MultipartFile file : files) {			    	 
-			         String fileName = file.getOriginalFilename();
-			         String parseMd5=md5(fileName.toLowerCase());
-			         fileNames.add(parseMd5);
-			         
-			         if(!fileName.isEmpty()) {
-			         String filePath = realPathtoUploads + File.separator + File.separator + "products"+ File.separator + product.getId()+ File.separator + parseMd5;
-			         ImageFiles images= new ImageFiles();
-			         //save to database			         
-			         images.setImage(parseMd5);
-			         images.setStockId(product.getId());		
-			         images.setSize(file.getSize());
-			         images.setExt(file.getContentType());
-			         ImageRepository.save(images);
-			         //save to web folder
-			         File destination = new File(filePath);
-			         //file.transferTo(destination);
-			         file.transferTo(destination);
-			       }
-			   }
-			}
-		}
-	   
-	   
-
 	
-    
 }

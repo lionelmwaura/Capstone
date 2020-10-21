@@ -10,6 +10,8 @@ public class Algebra {
 	public Algebra() {
 	}
 	
+	@Id
+	private Long id;
 	private ArrayList<Equation> equations;
 
 	public ArrayList<Equation> getEquations() {

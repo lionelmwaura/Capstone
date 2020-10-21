@@ -30,7 +30,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.web.tutor.model.Addressess;
 import com.web.tutor.model.PaymentMethod;
-import com.web.tutor.model.Products;
 import com.web.tutor.model.Role;
 import com.web.tutor.model.Users;
 import com.web.tutor.repository.AddressRepository;
@@ -86,43 +85,9 @@ public class UserController {
 		return new Users();		
 	}
 	
-	@ModelAttribute("product")
-	Products prod() {
-	return new Products();		
-	}
 	
-	@ModelAttribute("sizes")
-	public List<String> size() {
-		List<String> size = new ArrayList<String>();
-		size.add("S");
-		size.add("M");		
-		size.add("L");
-		size.add("XL");
-		size.add("2X");
-		size.add("3X");		
-		size.add("FREE SIZE");
-		return size;
-	}
 
-	@ModelAttribute("cols")
-	public List<String> colour() {
-		List<String> col = new ArrayList<String>();
-		col.add("Blue");
-		col.add("Brown");
-		col.add("Black");
-		col.add("White");
-		col.add("Green");
-		col.add("Gray");
-		col.add("Red");
-		col.add("Yellow");
-		col.add("Pink");
-		col.add("Tan");
-		col.add("Purple");
-		col.add("Maroon");
-		col.add("Gold");
-		col.add("Silver");
-		return col;
-	}
+	
 
 	
 	@PostMapping("register")

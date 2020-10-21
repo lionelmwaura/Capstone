@@ -24,18 +24,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.web.tutor.applications.Algebra;
 import com.web.tutor.applications.Equation;
-import com.web.tutor.repository.MathRepository;
 
 @Controller
 public class MathController {
 
-	@Autowired
-	private MathRepository mathRepository;
+	
 	
 	@ModelAttribute("algebra")
 	Algebra algebra() {
 	return new Algebra();
 	}
+	
+	
 	
 	@PostMapping("createEquation")
 	String createEquation(@ModelAttribute Equation eq, @RequestParam ArrayList<Double> input, @RequestParam ArrayList<String> arithmetic, @RequestParam String math) {

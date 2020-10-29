@@ -1,33 +1,57 @@
 package com.web.tutor.applications;
 
 import java.util.ArrayList;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Equations")
 public class Equation {
-
+	
 	public Equation() {
 	}
 	
-	private String math;
-	private ArrayList<Double> input;
-	private ArrayList<String> arithmetic;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	Long id;
+	String math;
+	private String equation;
+	private String help;
+	private String codeEq;
 	
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getMath() {
 		return math;
 	}
 	public void setMath(String math) {
 		this.math = math;
 	}
-	public ArrayList<Double> getInput() {
-		return input;
+	public String getEquation() {
+		return equation;
 	}
-	public void setInput(ArrayList<Double>input) {
-		this.input = input;
+	public void setEquation(String equation) {
+		this.equation = equation;
 	}
-	public ArrayList<String> getArithmetic() {
-		return arithmetic;
+	public String getHelp() {
+		return help;
 	}
-	public void setArithmetic(ArrayList<String> arithmetic) {
-		this.arithmetic = arithmetic;
+	public void setHelp(String help) {
+		this.help = help;
 	}
+	public String getCodeEq() {
+		return codeEq;
+	}
+	public void setCodeEq(String codeEq) {
+		this.codeEq = codeEq;
+	}
+	 
+	
+	
+	
+	
 }

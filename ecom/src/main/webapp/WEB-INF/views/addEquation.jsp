@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 
 <!-- Favicons Icon -->
 
-<title>Capstone | Admin </title>
+<title> AddEquation </title>
 
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -65,21 +65,20 @@ pageEncoding="UTF-8"%>
         <div class="cart">
           <div class="page-title">
            
-            <h1>Page ${list.getNumber()+1} of ${list.totalPages} showing ${list.content.size()} of all ${list.getTotalElements()} Users  ${success} <span class="text-danger">${error}</span></h1>
-             <form action="seachByemailOrlastname" method="post">
-              <input id="searchnow" type="text" class="input-text" name="lName"  placeholder="Last name">
-              <input type="email" name="email" class="input-text" placeholder="E-mail">
+            <h1>Page ${list.getNumber()+1} of ${list.totalPages} showing ${list.content.size()} of all ${list.getTotalElements()} Math  ${success} <span class="text-danger">${error}</span></h1>
+             <form action="seachMath" method="post">
+              <input id="searchnow" type="text" class="input-text" name="id"  placeholder="Equation Id">
               <button type="submit" class="btn btn-danger btn-md">Search</button>
+               <a href="#" data-toggle="modal" data-target="#addEquation"  title="Add Equation" class="edit-bnt" href="#">Add Equation</a>
               </form>
           </div>
            <br>
                  <table class="data-table table-responsive" >
                   <thead>
                     <tr>
-                      <th></th>
-                      <th><h2><i class="fa fa-users"></i> Users</h2></th>
-                      <th><h2> <i class="fa fa-envelope"></i> Email</h2></th>
-                      <th><h2><i class="fa fa-key"></i> Role</h2></th>
+                      <th><h2><i class="fa"></i> id</h2></th>
+                      <th><h2> <i class="fa "></i> Equation</h2></th>
+                      <th><h2><i class="fa"></i> Math</h2></th>
                       <th class="a-center " rowspan="1"><h2> <i class="fa fa-edit"></i> Action</h2> </th>                      
                     </tr>
                   </thead>
@@ -87,36 +86,17 @@ pageEncoding="UTF-8"%>
                   <tbody>
                     <c:forEach var="item" items="${list.content}">
                     <tr>
-                      <td class="image">
-                      <c:if test="${not empty item.image}"> 
-                      <img width="75" height="75" alt="" src="static/img/users/${item.id}/profile/${item.image}">
-                      </c:if>
-                      </td>
-                      <td><h2 class="product-name"> <a  href="#" data-toggle="modal" data-target="#about${item.id}" ><i class="fa fa-user"></i>  ${item.fName} ${item.lName}</a>
-                       </h2></td>
+                      <td><h2 class="text-info">${item.id}</h2></td>
                        <td class="a-center hidden-table">
-                       <h2 class="text-info">${item.email} <a href="deleteByemail?email=${item.email}"><i class="fa fa-times"></i></a></h2>
+                       <h2 class="text-info">${item.equation}</h2>
                        </td>
                       <td class="a-center hidden-table">
                       <h2>
-                      <form method="POST" action="editrole" >    
-						<input type="hidden" name="id" value="${item.id}" />      
-						<select onchange="this.form.submit()" name="role"  class="validate-select required-entry">
-						<option value="${item.role}">
-						<c:forEach var="r" items="${item.getRoles()}">
-						  ${r.role}
-						</c:forEach>
-						</option>
-						<option value="USER">USER </option>
-						<option value="DBA">DBA</option>
-						<option value="ADMIN">ADMIN</option>  
-						</select>
-						  </form>
+                      <h2 class="text-info">${item.math}</h2>
 						  </h2>
 						  </td>
                       <td><h2>
-                      <a href="#" data-toggle="modal" data-target="#edits${item.id}"  title="Edit User" class="edit-bnt" href="#"></a>
-                      <a class="button remove-item" title="Remove item" href="deleteUser?id=${item.id}" onclick="confirmed(); return false;" class="btn btn-default"><span class="fa fa-times"></span></a>
+                      <a class="button remove-item" title="Remove item" href="deleteEquation?id=${item.id}" onclick="confirmed(); return false;" class="btn btn-default"><span class="fa fa-times"></span></a>
                       </h2>
                       </td>
                    
@@ -172,54 +152,52 @@ pageEncoding="UTF-8"%>
   
   
   
-  
  
  
  
  
  
-  <c:forEach var="item" items="${list.content}">
-            <div class="modal fade" id="edits${item.id}">
+
+ <div class="modal fade" id="addEquation">
     <div class="modal-dialog modal-sm">
 <div class="modal-content">
 <div class="modal-header">
-                <h5 class="modal-">Update Info
+                <h5 class="modal-">Add Equation
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                 </h5>
               </div>     
 <!-- Modal body -->
 
 <div class="modal-body">
-<form:form action="updateUsers" modelAttribute="user" method="post" id="form-validate" >
-               
-                  <input name="id" type="hidden" value="${item.id}" >
+<form:form action="addEquation" modelAttribute="equation" method="post" id="form-validate" >
                  
                   <ul class="form-list">
                     <li class="fields">
-                      <div class="customer-name">
-                        <div class="input-box name-firstname">
-                          <label for="firstname">First Name<span class="required">*</span></label>
+                      <div class="customer-name">     
+                        <div class="input-box name-lastname">
+                          <label for="lastname">Equation <span class="required">*</span></label>
                           <div class="input-box1">
-                            <form:input path="fName"  value="${item.fName}" class="input-text" placeholder="First Name"/>
+                            <form:input path="equation" class="input-text" placeholder="equation"/>
                           </div>
                         </div>
                         <div class="input-box name-lastname">
-                          <label for="lastname">Last Name <span class="required">*</span></label>
+                          <label for="lastname">Code Equation <span class="required">*</span></label>
                           <div class="input-box1">
-                            <form:input path="lName"  value="${item.lName}" class="input-text" placeholder="Last Name"/>
+                            <form:input path="codeEq" class="input-text" placeholder="Code Equation"/>
                           </div>
-                          <form:input type="hidden" path="email" value="${item.email}" class="input-text" />
                         </div>
                         <div class="input-box name-lastname">
-                          <label for="lastname">Please select Roles <span class="required">*</span></label>
+                          <label for="lastname">Please select Math <span class="required">*</span></label>
                          <br>
-                          <form:select path="role" defaultvalue="${item.role}"  class="col-md-12">
-                    		<option value="${item.role}">${item.role}</option>
-                    		<option value="USER">USER</option>
-							<option value="DBA">DBA</option>
-							<option value="ADMIN">ADMIN</option>
+                          <form:select path="math" defaultvalue="Math"  class="col-md-12">
+                    		<option value="Algebra">Algebra </option>
+							<option value="Statistics">Statistics</option>
+							<option value="Geometry">Geometry</option>
  						  </form:select>
- 
+ 						
+ 						<label for="lastname">Tips to solve equation<span class="required">*</span></label>
+ 						<br>
+ 						<textarea name="help" id="help" title="Mathhelp" class="input-text" cols="5" rows="3"></textarea>
                         </div>
                         
                         
@@ -239,42 +217,18 @@ pageEncoding="UTF-8"%>
     </div>
       </div>
   </div>
-            </c:forEach>
              
                <c:forEach var="item" items="${list.content}">
                <div class="modal fade" id="about${item.id}">
     <div class="modal-dialog modal-md">
 <div class="modal-content">
 <div class="modal-header">
-                <h2 class="modal-"><b>${item.fName} ${item.lName}</b>
+                <h2 class="modal-"><b>${item.id} ${item.math}</b>
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                 </h2> 
               </div>      
 <!-- Modal body -->
-<div class="modal-body">    
-     
-                      <div class="text-secondary">
-     
-      <h3>
-         <c:if test="${not empty item.getAddress()}">            
-             <i class="fa fa-home text-success"> </i>
-             ${item.getAddress().street},
-${item.getAddress().city},
-${item.getAddress().state}<br>
-</c:if>
-<i class="fa fa-envelope"></i> ${item.email}
-<hr><i class="fa fa-key"></i>
-<c:forEach var="r" items="${item.getRoles()}">
-     ${r.role}<i class="fa fa-check"></i>
-    </c:forEach>
-<br>
-       </h3>   
-      </div>
-             
-      <div class="buttons-set">
-                  <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-danger">Close</button>
-                </div>
-                     </div>
+
     </div>
       </div>
      </div>    

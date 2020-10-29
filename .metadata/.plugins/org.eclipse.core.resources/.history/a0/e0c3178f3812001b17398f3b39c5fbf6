@@ -1,5 +1,0 @@
-package com.web.tutor.applications;
-
-public enum Math {
-
-}

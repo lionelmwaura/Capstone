@@ -28,7 +28,7 @@
               </div>
               <!-- End Header Currency -->
               
-              <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+              <!-- <div class="welcome-msg hidden-xs"> Default welcome msg! </div> -->
             </div>
             <div class="col-xs-5 col-sm-6"> 
               
@@ -80,6 +80,7 @@
             <c:if test="${fn:contains(role, 'ADMIN')}">
             <%-- <c:if test="${role eq 'ADMIN' || role eq 'DBA'}"> --%>
               <div class="login"><a href="admin"><span class="hidden-xs">admin</span></a></div>
+              <div class="login"><a href="addeq"><span class="hidden-xs">Equation</span></a></div>
             </c:if>
               <div class="myaccount"><a title="My Account" href="profile"><span class="hidden-xs">My Account</span></a></div>
               <div class="myaccount"><a title="My Account" href="logout"><span class="hidden-xs">Logout</span></a></div>
@@ -112,74 +113,9 @@
             <li class="level0 parent drop-menu active"><a href="home"><span>Home</span></a></li>
             <li class="mega-menu"><a class="level-top" href="about"><span>About</span></a></li>
             <li class="level0 nav-8 level-top"><a href="contact" class="level-top"><span>Contact</span></a></li>
-          	<li class="mega-menu ${math}"><a class="level-top" href="math"><span>Math</span></a></li>
-          	
-            
-            
             </ul>
             <ul class="nav hidden-xs menu-item menu-item-right">
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Electronics</span></a>
-              <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
-                <div class="container">
-                  <div class="level0-wrapper2">
-                    <div class="nav-block nav-block-center">
-                      <ul class="level0">
-                        <li class="level1 nav-6-1 parent item"><a href="#/mobiles.html"><span>Mobiles</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/mobiles/samsung.html"><span>Samsung</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/mobiles/nokia.html"><span>Nokia</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/mobiles/iphone.html"><span>IPhone</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/mobiles/sony.html"><span>Sony</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>Accesories</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/mobile-memory-cards.html"><span>Mobile Memory Cards</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/cases-covers.html"><span>Cases &amp; Covers</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/mobile-haedphones.html"><span>Mobile Headphones</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/bluetooth-headsets.html"><span>Bluetooth Headsets</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/cameras.html"><span>Cameras</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/cameras/camcorders.html"><span>Camcorders</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/cameras/point-shoot.html"><span>Point &amp; Shoot</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/cameras/digital-slr.html"><span>Digital SLR</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#camera-accesories.html"><span>Camera Accesories</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/audio-video.html"><span>Audio &amp; Video</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/audio-video/mp3-players.html"><span>MP3 Players</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/audio-video/ipods.html"><span>IPods</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/audio-video/speakers.html"><span>Speakers</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/audio-video/video-players.html"><span>Video Players</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/computer.html"><span>Computer</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/external-hard-disk.html"><span>External Hard Disk</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/computer/pendrives.html"><span>Pendrives</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/computer/headphones.html"><span>Headphones</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/computer/pc-components.html"><span>PC Components</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-6-1 parent item"><a href="#/home-appliances.html"><span>Appliances</span></a>
-                          <ul class="level1">
-                            <li class="level2 nav-6-1-1"><a href="#/vaccum-cleaners.html"><span>Vaccum Cleaners</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/indoor-lighting.html"><span>Indoor Lighting</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/kitchen-tools.html"><span>Kitchen Tools</span></a></li>
-                            <li class="level2 nav-6-1-1"><a href="#/water-purifier.html"><span>Water Purifier</span></a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!--level0-wrapper2--> 
-                  
-                </div>
-              </div>
-            </li>
+            <li class="mega-menu ${math}"><a class="level-top" href="math"><span>Math</span></a></li>
             
           </ul>
       </div>

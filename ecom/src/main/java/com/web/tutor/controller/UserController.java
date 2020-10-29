@@ -244,15 +244,15 @@ public class UserController {
 	public String users(Model model, @RequestParam(value = "page", defaultValue = "0", required = false) Integer page,
 	            @RequestParam(value = "size", defaultValue = "4", required = false) Integer size) {
 	        
-	        try {
+		try {
 	        model.addAttribute("users", "active");
 	        Page<Users> findAllPagable = userRepository.findAll(PageRequest.of(page, size, Sort.by("fName")));
-	model.addAttribute("list", findAllPagable);
-	model.addAttribute("msg"," Users found");
-	  } catch (Exception e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-	} 
+	        model.addAttribute("list", findAllPagable);
+	        model.addAttribute("msg"," Users found");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 
 	return "admin";
 
@@ -293,7 +293,7 @@ public class UserController {
 			  return "redirect:/login";
 		  }
 		  
-		  return "redirect:/profile";
+		  return "redirect:/math";
 			
 	}
 	

@@ -102,6 +102,7 @@ div.scrollmenu a:hover {
             
           <div class="block-content ">
               <h5 id="id">${codeEq}</h5>
+              <br>
               <h5>${help}</h5>
               
             </div>
@@ -195,9 +196,6 @@ div.scrollmenu a:hover {
 	  "use strict";
 	  
 	  var calculator;
-	  var linear = "x+"
-	  var quadratic = "x^2+x+";
-	  var cubic =  "x^3+x^2+x+";
 	  var equation = document.getElementById("id").innerHTML;
 
 	  function between (a, b) {
